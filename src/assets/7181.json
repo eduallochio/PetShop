@@ -1,0 +1,70 @@
+{
+  "uuid": "0ae941e3-0054-488e-9d1a-375e23233e70",
+  "lastMigration": 24,
+  "name": "7181",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3000,
+  "hostname": "127.0.0.1",
+  "routes": [
+    {
+      "uuid": "6e0a89f6-2a4d-4642-9af4-cab95968fb06",
+      "documentation": "localhost:3000/v1/products",
+      "method": "get",
+      "endpoint": "products",
+      "responses": [
+        {
+          "uuid": "e43afe29-08d6-410d-9867-960c2a8b6ff4",
+          "body": "{\n  \n}",
+          "latency": 800,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "data": []
+}
