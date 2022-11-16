@@ -14,12 +14,15 @@ import { FramePageComponent } from './pages/master/frame.page';
 import { CartPageComponent } from './pages/store/cart-page/cart-page.component';
 import { ProductsPageComponent } from './pages/store/products-page/products-page.component';
 import { ProductCardComponent } from './components/store/product-card/product-card.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import {  ReactiveFormsModule } from '@angular/forms';
+import { LoadingComponent } from './components/shared/loading/loading.component';
+import { MaskDirective } from './directives/mask.directive';
 
 
 
 @NgModule({
   declarations: [
+    MaskDirective,
     AppComponent,
     NavbarComponent,
     LoginPageComponent,
@@ -30,9 +33,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     CartPageComponent,
     FramePageComponent,
     ProductCardComponent,
+    LoadingComponent,
+   
     
     
   ],
+
   imports: [
     BrowserModule,
     HttpClientModule,
