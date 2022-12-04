@@ -7,14 +7,14 @@
         <app-loading *ngIf="busy"></app-loading>
 
         <form [formGroup]="form" *ngIf="!busy">
-            <div class="uk-card uk-card-primary uk-card-body uk-box-shadow-smal">
+            <div class="uk-card uk-card-primary uk-card-body uk-box-shadow-small">
                 <h3 class="uk-card-title">Autentique-se</h3>
                 <div class="uk-margin" >
                     <input class="uk-input uk-form-large"
                      formGroupName="username" type="text"
                       placeholder="CPF"
                       mask="###.###.###-##"
-                    ngClass="{'uk-form-danger': (!form.controls.username.valid && !form.controls.username.pristene) }">
+                    ngClass="{'uk-form-danger': (!form.controls.username.valid && !form.controls.username.pristine) }">
                 </div>
                 <div class="uk-margin" >
                     <input class="uk-input uk-form-large" formGroupName="password" type="password" placeholder="Senha">
@@ -31,7 +31,7 @@
                 Quero me Cadastrar
             </a>
             <br>
-            <a href="/reset-password" class="uk-button uk-button-link">
+            <a [routerLink]="['/reset-password']" class="uk-button uk-button-link">
                 Esqueci minha senha
             </a>
         </p>
