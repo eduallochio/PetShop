@@ -8,16 +8,17 @@ import { FramePageComponent } from './pages/master/frame.page';
 import { CartPageComponent } from './pages/store/cart-page/cart-page.component';
 import { ProductsPageComponent } from './pages/store/products-page/products-page.component';
 import { AuthService } from './services/auth.service';
+import { CheckoutPageComponent } from './pages/store/checkout-page/checkout-page.component';
 
 const routes: Routes = [
   {
    path:'',
    component: FramePageComponent,
-   
+
    children: [
     {path: '', component: ProductsPageComponent},
-    {path: 'cart', component: CartPageComponent, canActivate: [AuthService]}
-    // {path: 'checkout', component: CheckoutpPageComponent, canActivate: [AuthService]}
+    {path: 'cart', component: CartPageComponent, canActivate: [AuthService]},
+    { path: 'checkout', component: CheckoutPageComponent, canActivate: [AuthService]}  
    ]
   },
   {

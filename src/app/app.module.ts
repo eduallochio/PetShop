@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http'
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ToastrModule } from 'ngx-toastr';
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,6 +20,7 @@ import { LoadingComponent } from './components/shared/loading/loading.component'
 import { MaskDirective } from './directives/mask.directive';
 import { DataService } from './services/data.service';
 import { AuthService } from './services/auth.service';
+import { CheckoutPageComponent } from './pages/store/checkout-page/checkout-page.component';
 
 
 
@@ -38,7 +38,7 @@ import { AuthService } from './services/auth.service';
     FramePageComponent,
     ProductCardComponent,
     LoadingComponent,
-   
+   CheckoutPageComponent
     
     
   ],
@@ -47,8 +47,6 @@ import { AuthService } from './services/auth.service';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot(),
     ReactiveFormsModule
   ],
   providers: [DataService, AuthService],

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr/public_api';
+
 import { DataService } from 'src/app/services/data.service';
 import { CustomValidator } from 'src/app/validators/custom.validator';
 
@@ -18,7 +18,7 @@ export class SignupPageComponent implements OnInit {
     private router: Router,
     private service: DataService,
     private fb: FormBuilder,
-    private toastr: ToastrService
+
   ) {
     this.form = this.fb.group({
       nome: ['', Validators.compose([
@@ -58,7 +58,6 @@ export class SignupPageComponent implements OnInit {
       .subscribe(
         (data: any) => {
           this.busy = false;
-          this.toastr.success(data.message, 'Bem-vindo!');
           this.router.navigate(['/login']);
         },
         (err) => {

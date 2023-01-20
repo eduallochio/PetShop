@@ -20,7 +20,6 @@
     "@angular/router": "^14.2.0",
     "force": "^0.0.3",
     "loader-utils": "^2.0.3",
-    "ngx-toastr": "^13.2.1",
     "package-lock.json": "^1.0.0",
     "rm": "^0.1.8",
     "rxjs": "~7.5.0",
