@@ -14,7 +14,7 @@
                      formGroupName="username" type="text"
                       placeholder="CPF"
                       mask="###.###.###-##"
-                    ngClass="{'uk-form-danger': (!form.controls.username.valid && !form.controls.username.pristine) }">
+                      [ngClass]="{'uk-form-danger': (!form.controls['username'].valid && !form.controls['username'].pristine) }">
                 </div>
                 <div class="uk-margin" >
                     <input class="uk-input uk-form-large" formGroupName="password" type="password" placeholder="Senha">

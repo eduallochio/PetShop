@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {  Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { DataService } from 'src/app/services/data.service';
 import { CustomValidator } from 'src/app/validators/custom.validator';
 
@@ -17,7 +18,8 @@ export class ResetPasswordPageComponent implements OnInit {
   constructor(
     private router: Router,
     private service: DataService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private toastr: ToastrService
 
   ) {
     this.form = this.fb.group({
@@ -42,6 +44,7 @@ export class ResetPasswordPageComponent implements OnInit {
     .subscribe(
       (data: any) => {
         this.busy
+        this.toastr.success(data.success,  'Senha Restaurada')
         this.router.navigate(['/login']);
       },
       (err: any) => {
