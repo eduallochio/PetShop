@@ -51,7 +51,7 @@ export class LoginPageComponent implements OnInit {
             this.busy = false;
             this.setUser(data.customer, data.token);
           },
-          (err) => {
+          (_err) => {
             localStorage.clear();
             this.busy = false;
           }

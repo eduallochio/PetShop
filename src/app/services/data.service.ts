@@ -1,19 +1,19 @@
-import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Injectable } from "@angular/core";
-import { Product } from "../models/product.model";
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Product } from '../models/product.model';
 
 @Injectable({
     providedIn: 'root'
 })
+export class DataService {
 
-export class DataService{
+    public url = 'http://localhost:3000/v1';
 
-    public url = 'http://localhost:3000/v1'
-    constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient) { }
 
-    public composeHeaders(){
-        const token = localStorage.getItem('petshop.token')
-        const headers = new HttpHeaders().set('Authorization', `bearer ${token}`)
+    public composeHeaders() {
+        const token = localStorage.getItem('petshop.token');
+        const headers = new HttpHeaders().set('Authorization', `bearer ${token}`);
         return headers;
     }
 
@@ -27,17 +27,25 @@ export class DataService{
 
     refreshToken() {
         return this.http.post(
-            `${this.url}/accounts/refresh-token`, 
-        null, 
-        {headers: this.composeHeaders()} );
+            `${this.url}/accounts/refresh-token`,
+            null,
+            { headers: this.composeHeaders() }
+        );
     }
 
     create(data: any) {
-        return this.http.post(`${this.url}/accounts`, data)
+        return this.http.post(`${this.url}/accounts`, data);
     }
 
     resetPassword(data: any) {
         return this.http.post(`${this.url}/accounts/reset-password`, data);
     }
-   
+
+    getProfile() {
+        return this.http.get(`${this.url}/accounts`, { headers: this.composeHeaders() });
+    }
+
+    updateProfile(data: any) {
+        return this.http.put(`${this.url}/accounts`, data, { headers: this.composeHeaders() });
+    }
 }

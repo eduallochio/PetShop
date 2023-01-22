@@ -4,14 +4,13 @@ import { Directive, ElementRef, HostListener, Input } from '@angular/core';
     selector: '[mask]',
 })
 export class MaskDirective {
-    @Input('mask')
-    mask!: string;
+    @Input('mask') mask: string;
 
     constructor(private element: ElementRef) {
 
     }
 
-    @HostListener('input', ['$event']) onInputChange(event: any) {
+    @HostListener('input', ['$event']) onInputChange(event: { inputType: string; stopPropagation: () => void; }) {
         if (event.inputType == 'deleteContentBackward')
             return;
 

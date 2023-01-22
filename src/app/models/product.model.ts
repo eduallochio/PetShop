@@ -4,5 +4,5 @@ export class Product {
     public category!: string;
     public descrption!: string
     public price!: number;
-    public images!: string;
+    public images: string[] = [];
 }
